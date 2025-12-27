@@ -14,14 +14,12 @@ const app = express();
 // CORS configuration with proper options object
 const allowedOrigins = [
   "https://gdg-hackathon-frontend.vercel.app",
-  "http://localhost:3000",
-  "http://localhost:5174",
-  process.env.CORS_ORIGIN,
+  
 ].filter(Boolean);
 
 const corsOptions = {
   origin: (origin, callback) => {
-    // Allow requests with no origin (mobile apps, Postman, etc.)
+    
     if (!origin) return callback(null, true);
     if (allowedOrigins.includes(origin)) {
       callback(null, true);
